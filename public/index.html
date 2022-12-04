@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>oop</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        i{
+            pointer-events: none;
+        }
+        tbody#displayData img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+        div#viewDataDisplay {
+            text-align: center;
+        }
+        div#viewDataDisplay img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="row " style="border: 1px solid green; padding: 20px;">
+                <div class="col-md-4" style="border-right: 1px solid green; padding: 20px;">
+                    <div class="alertSMS"></div>
+                    <form id="studentForm" action="">
+                        <div class="form-group mb-3">
+                          <label for="name">Name</label>
+                          <input name="name" type="text" class="form-control" id="name">
+                        </div>
+                       
+                        <div class="form-group mb-3">
+                            <label for="email">Email address</label>
+                            <input name="email" type="text" class="form-control" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="photo">Student Photo</label>
+                            <input name="photo" type="text" class="form-control" id="photo">
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                </div>
+                <div class="col-md-8" style="padding: 20px;">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="displayData">
+                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Modal -->
+<div class="modal fade" id="view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="viewDataDisplay">
+             
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+     <!-- Modal -->
+<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div  class="modal-body">
+            <div class="alertSMSUpdate"></div>
+            <form id="update" action="">
+                <div class="form-group mb-3">
+                <label for="name">Name</label>
+                <input value="${editData.name}" name="name" type="text" class="form-control" id="name">
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="email">Email address</label>
+                    <input value="${editData.email}" name="email" type="text" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="photo">Student Photo</label>
+                    <input value="${editData.photo}" name="photo" type="text" class="form-control" id="photo">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+    <!-- Optional theme -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="../app.js"></script> 
+</body>
+</html>
